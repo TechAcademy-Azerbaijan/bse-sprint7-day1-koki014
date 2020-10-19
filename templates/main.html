@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ul>
+    {% for student in students %}
+        
+        {% if student.Status %}
+            <li>student ID: {{student['Id']}}, </li>
+            <li>stundent Name: {{student['Name']|title}}</li>
+            <li>stundent Surname: {{student['Surname']|title}}</li>
+            {% if student.Bio == '' %}
+                <li>studen Bio: I'm a student at Tech academy.</li>
+            {% else %}
+                <li>student Bio: {{student['Bio']}}</li>
+            {% endif %}
+            <li class="img">Student Img: <img src="{{student['Image']}}" alt=""></li>
+        {% endif %}
+
+    {% endfor %}
+
+
+</ul>
+
+{% endblock %}
